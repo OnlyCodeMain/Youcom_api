@@ -1,6 +1,15 @@
 # Youcom_api
 you.com的逆向api，支持Stream 流式传输
 
+## 部署
+```bash
+git clone https://github.com/len-ni/Youcom_api
+cd Youcom_api
+pip install -r requirements.txt
+python api.py
+```
+此时API会运行在本地的50600端口上
+
 ## 测试
 拉取并安装模块后运行
 ```bash
@@ -10,13 +19,6 @@ python test.py
 
 如果输出 盾 请尝试[http代理](https://github.com/len-ni/Youcom_api/?tab=readme-ov-file#cf%E7%9B%BE)
 
-## 部署
-```bash
-git clone https://github.com/len-ni/Youcom_api
-cd Youcom_api
-pip install -r requirements.txt
-python api.py
-```
 ## 使用
 请求头需携带Authorization 内容是you.com的cookie。使用以下代码在浏览器F12开发者模式-控制台输入获取,nextchat则设置为API KEY。
 ```bash
@@ -50,6 +52,7 @@ if (stytch_session_jwt && ydc_stytch_session) {
 > - claude_3_sonnet
 > - claude_3_haiku
 > - command_r_plus
+> - gpt_4o
 
 不支持api格式消息，使用增加提示解决(可能会露馅，未测试)
 > - command_r
