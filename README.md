@@ -1,7 +1,10 @@
 # Youcom_api
 you.com的逆向api，支持Stream 流式传输
 
-### 更新 
+## 更新 
+2024/5/15 更新
+
+修复了params参数，修复gpt_4o模型实际使用gpt_4的问题
 
 ## 部署
 ```bash
