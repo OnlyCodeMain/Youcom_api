@@ -17,7 +17,7 @@ if proxy:
 else:
     proxies = None
 
-models = ['gpt_4', 'gpt_4_turbo', 'claude_2', 'claude_3_opus', 'claude_3_sonnet', 'claude_3_haiku', 'gemini_pro', 'gemini_1_5_pro', 'databricks_dbrx_instruct', 'command_r', 'command_r_plus', 'zephyr', 'claude_3_opus_2k']
+models = ['gpt_4', 'gpt_4_turbo', 'gpt_4o', 'claude_2', 'claude_3_opus', 'claude_3_sonnet', 'claude_3_haiku', 'gemini_pro', 'gemini_1_5_pro', 'databricks_dbrx_instruct', 'command_r', 'command_r_plus', 'zephyr', 'claude_3_opus_2k']
 
 headers = {
     'User-Agent': ua,
@@ -64,23 +64,25 @@ def get_ck_parms(session, session_jwt, chat, chatid, model):
         'ydc_stytch_session': session,
         'ydc_stytch_session_jwt': session_jwt,
     }
-    params = {
-        'q':chat,
-        'page':1,
-        'count':10,
-        'safeSearch':'Off',
-        'responseFilter':'WebPages,TimeZone,Computation,RelatedSearches',
-        'domain':'youchat',
-        'use_personalization_extraction':'true',
-        'queryTraceId':chatid,
-        'chatId':chatid,
-        'conversationTurnId':uuid.uuid4(),
-        'pastChatLength':0,
-        'isSmallMediumDevice':'true',
-        'selectedChatMode':'custom',
-        'selectedAIModel':model,
-        'traceId':f'{chatid}|{uuid.uuid4()}|{datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.%fZ")}'
-    }
+    params = {'q': chat, 
+             'page': '1', 
+             'count': '10', 
+             'safeSearch': 
+             'Moderate', 'mkt': 
+             'zh-HK', 'responseFilter': 
+             'WebPages,TimeZone,Computation,RelatedSearches', 
+             'domain': 'youchat', 
+             'use_personalization_extraction': 'true', 
+             'queryTraceId': chatid, 
+             'chatId': chatid, 
+             'conversationTurnId': '75f82567-3f79-4f4d-bdbc-48847c23cab3', 
+             'pastChatLength': '0', 
+             'isSmallMediumDevice': 'true', 
+             'selectedChatMode': 'custom', 
+             'selectedAiModel': model, 
+             'traceId': f'{chatid}|{uuid.uuid4()}|{datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.%fZ")}', 
+             'chat': '[]'
+             }
     return cookies,params
 
 def parse_1(data):
