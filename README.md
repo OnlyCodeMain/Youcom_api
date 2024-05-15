@@ -1,6 +1,8 @@
 # Youcom_api
 you.com的逆向api，支持Stream 流式传输
 
+### 更新 
+
 ## 部署
 ```bash
 git clone https://github.com/len-ni/Youcom_api
